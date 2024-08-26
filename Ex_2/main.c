@@ -13,11 +13,20 @@ int main(int argc, char* argv[]) {
     } else {
         // Prompt the user for input if no arguments are provided
         printf("Enter minimum value: ");
-        scanf("%d", &min);
+        if (scanf("%d", &min) != 1) {
+            fprintf(stderr, "Error: Invalid input for minimum value.\n");
+            return 1;
+        }
         printf("Enter maximum value: ");
-        scanf("%d", &max);
+        if (scanf("%d", &max) != 1) {
+            fprintf(stderr, "Error: Invalid input for maximum value.\n");
+            return 1;
+        }
         printf("Enter count of unique random numbers to generate: ");
-        scanf("%d", &count);
+        if (scanf("%d", &count) != 1) {
+            fprintf(stderr, "Error: Invalid input for count.\n");
+            return 1;
+        }
     }
 
     // Call the function to generate random numbers

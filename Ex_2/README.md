@@ -62,4 +62,10 @@ This command links the object files `main.o` and `random.o` together to produce 
 
 ### Step 4: Program output screenshots:
 
-(insert screenshots)
+![Program Output](images/Output.png)
+
+![Program Output](images/Output_Params.png)
+
+![Program Output](images/Output_Error.png)
+
+![Program Output](images/Output_Error1.png)

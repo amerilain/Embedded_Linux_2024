@@ -1,0 +1,27 @@
+# Define the compiler
+CC := gcc
+
+# Define the compiler flags
+CFLAGS := -Wall -Wextra -Wfatal-errors -Wpedantic
+
+# Define the source files using a wildcard
+SRCS := $(wildcard *.c)
+
+# Define the object files by replacing .c with .o in SRCS
+OBJS := $(SRCS:.c=.o)
+
+# Define the target executable
+TARGET := random_generator
+
+# Rule to link the object files and create the executable
+$(TARGET): $(OBJS)
+	$(CC) -o $@ $^
+
+# Rule to compile source files into object files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $<
+
+# Rule to clean up the directory
+.PHONY: clean
+clean:
+	rm -f $(OBJS) $(TARGET)

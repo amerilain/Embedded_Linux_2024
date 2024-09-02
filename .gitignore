@@ -7,6 +7,23 @@
 *.lo
 *.slo
 
+# Ignore all executable files (no extension)
+*/random_generator
+*/asan_program
+*/debug_program
+*/help
+*/optimized_program
+
+# Ignore all other executables
+*.exe
+*.out
+*.app
+*.x86_64
+*.hex
+*.elf
+*.bin
+*.dmg
+
 # Precompiled Headers
 *.gch
 *.pch

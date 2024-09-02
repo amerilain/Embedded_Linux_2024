@@ -1,5 +1,109 @@
-Ex_2/asan_program
-Ex_2/debug_program
-Ex_2/help
-Ex_2/optimized_program
-Ex_2/random_generator
+# Compiled object files
+*.o
+*.ko
+*.obj
+*.elf
+*.gch
+*.lo
+*.slo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.def
+*.exp
+*.out
+
+# Shared objects (shared libraries)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables and binaries
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.stackdump
+*.stripped
+
+# Generated files
+*.d
+*.dep
+*.mod
+*.cmd
+*.o.cmd
+*.ko.cmd
+*.so.cmd
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.db
+
+# Makefile generated files
+*.d
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CMakeLists.txt.user
+
+# Backup files
+*~
+*.bak
+*.swp
+*.swo
+*.tmp
+*.temp
+
+# IDE files (optional, uncomment as needed)
+# .vscode/
+# .idea/
+# *.code-workspace
+# compile_commands.json
+
+# Directory-specific ignore rules
+Ex_3/random_generator
+
+# General ignore rules for build directories
+build/
+Build/
+dist/
+bin/
+obj/
+lib/
+
+# Other general ignore rules
+*.tar.gz
+*.tgz
+*.zip
+*.rar
+*.7z
+*.bak
+*.swp
+*.swo
+*.tmp
+*.log
+*.log.*
+*.pid
+*.seed
+*.gz
+*.bz2
+*.xz
+*.lzma

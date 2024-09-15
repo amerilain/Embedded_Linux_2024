@@ -1,10 +1,10 @@
-# Set the minimum CMake version required
+# Set the minimum CMake version 
 cmake_minimum_required(VERSION 3.10)
 
 # Set the project name and version
 project(RandomGenerator VERSION 1.0 DESCRIPTION "Random number generator" LANGUAGES C)
 
-# Set the C standard to C17 as required
+# Set the C standard to C17 
 set(CMAKE_C_STANDARD 17)
 set(CMAKE_C_STANDARD_REQUIRED True)
 

@@ -1,39 +1,38 @@
-# Set the minimum CMake version 
+# Set the minimum CMake version required
 cmake_minimum_required(VERSION 3.10)
 
 # Set the project name and version
 project(RandomGenerator VERSION 1.0 DESCRIPTION "Random number generator" LANGUAGES C)
 
-# Set the C standard to C17 
+# Set the C standard to C17
 set(CMAKE_C_STANDARD 17)
 set(CMAKE_C_STANDARD_REQUIRED True)
 
-# Default build type
+# Add compiler flags from previous exercises
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wfatal-errors -Wpedantic")
+
+# 1. Build Type Control (Debug/Release)
+# Allows specifying whether to build with debug information or release optimizations.
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build: Debug or Release" FORCE)
 endif()
 
-# Add build types and their respective flags
-set(CMAKE_C_FLAGS_DEBUG "-g -O0")
-set(CMAKE_C_FLAGS_RELEASE "-O3")
+# Add specific flags for Debug and Release builds
+set(CMAKE_C_FLAGS_DEBUG "-g -O0")      # Debug build: Include debugging symbols, no optimization
+set(CMAKE_C_FLAGS_RELEASE "-O3")       # Release build: Full optimization
 
-# Add custom option for logging
-option(ENABLE_LOGGING "Enable logging in the program" ON)
+# 2. Organized Build Output Directories
+# Organize where build artifacts (binaries, libraries, object files) are stored.
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)  # Executables
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # Static Libraries
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # Shared Libraries
 
-if(ENABLE_LOGGING)
-    add_definitions(-DENABLE_LOGGING)
-endif()
-
-# Set output directories
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+# 3. Preprocessor Definitions
+# Add version number as a preprocessor definition that can be used in the code.
+add_definitions(-DMY_VERSION="\"1.0\"")
 
 # Include the header file directory
 include_directories(include)
 
-# Add preprocessor definitions
-add_definitions(-DMY_VERSION="\"1.0\"")
-
-# Add the executable target
+# Add the executable target with source files
 add_executable(random_generator src/main.c src/random.c)

@@ -21,7 +21,6 @@ set(CMAKE_C_FLAGS_DEBUG "-g -O0")      # Debug build: Include debugging symbols,
 set(CMAKE_C_FLAGS_RELEASE "-O3")       # Release build: Full optimization
 
 # Organize Build Output Directories
-# Organize where build artifacts (binaries, libraries, object files) are stored.
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)  # Executables
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # Static Libraries
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # Shared Libraries

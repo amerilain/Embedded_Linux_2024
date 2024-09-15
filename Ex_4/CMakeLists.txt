@@ -11,8 +11,7 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 # Add compiler flags from previous exercises
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wfatal-errors -Wpedantic")
 
-# 1. Build Type Control (Debug/Release)
-# Allows specifying whether to build with debug information or release optimizations.
+# Build Type Control (Debug/Release)
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build: Debug or Release" FORCE)
 endif()
@@ -21,14 +20,13 @@ endif()
 set(CMAKE_C_FLAGS_DEBUG "-g -O0")      # Debug build: Include debugging symbols, no optimization
 set(CMAKE_C_FLAGS_RELEASE "-O3")       # Release build: Full optimization
 
-# 2. Organized Build Output Directories
+# Organize Build Output Directories
 # Organize where build artifacts (binaries, libraries, object files) are stored.
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)  # Executables
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # Static Libraries
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # Shared Libraries
 
-# 3. Preprocessor Definitions
-# Add version number as a preprocessor definition that can be used in the code.
+# Preprocessor Definitions
 add_definitions(-DMY_VERSION="\"1.0\"")
 
 # Include the header file directory
